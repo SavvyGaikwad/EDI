@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRM - Upcoming Billings</title>
+  <link rel="stylesheet" href="css/all.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  
+  <!-- FullCalendar CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css" />
+  
+  <style>
+    /* Calendar Styles */
+    #calendar {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      height: 100%;
+      margin-top: 20px;
+    }
+    
+    /* Custom toolbar styles */
+    .fc-toolbar-title {
+      font-size: 1.5em;
+      color: #2f4f4f;
+    }
+    
+    .fc-button {
+      background-color: #4caf50;
+      color: white;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+
+    .fc-button:hover {
+      background-color: #45a049;
+    }
+
+    .fc-daygrid-event {
+      background-color: #f44336;
+      color: white;
+      border-radius: 5px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <nav class="carrotsuite-nav">
+        <div class="logo">
+          <a href="index.html" class="nav-item">
+            <img src="images/Carrotsuite.png" alt="Carrotsuite" />
+          </a>
+        </div>
+        <div class="icons right">
+          <a href="#" class="nav-item">
+            <div class="badge"><span>5</span></div>
+            <i class="far fa-bell"></i>
+          </a>
+          <a href="#" class="nav-item"><i class="far fa-envelope"></i></a>
+        </div>
+        <div class="user" id="user">
+          <a href="#" class="user-link">name</a>
+          <div class="user-img-wrapper">
+            <img src="images/useravatar.png" alt="User 1" />
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <main class="main">
+      <section class="sidebar">
+        <h3>CRM</h3>
+        <ul class="menu">
+          <li><a href="index.html" title="Home"><i class="fas fa-home"></i><span>Home</span></a></li>
+          <li><a href="dash.html" title="Dashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+          <li><a href="clients.html" title="Clients"><i class="fas fa-sitemap"></i><span>Clients</span></a></li>
+          <li><a href="cal.html" class="active" title="Calendar"><i class="fas fa-bullseye"></i><span>Calendar</span></a></li>
+          <li><a href="salesreport.html" title="Salesreport"><i class="fas fa-thumbs-up"></i><span>Salesreport</span></a></li>
+        </ul>
+      </section>
+
+      <section class="page-content">
+        <article class="header">
+          <div class="info">
+            <p>View all upcoming activities in the calendar</p>
+            <p><span>Upcoming Activties</span></p>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">
+              Actions <i class="fas fa-caret-up"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="#">Send SMS</a>
+              <a href="#">Send Email</a>
+              <a href="#">Export</a>
+              <a href="#">Import</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="board">
+          <section class="calendar-section">
+            <div id="calendar"></div>
+          </section>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <!-- FullCalendar and jQuery JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      var calendar = new FullCalendar.Calendar($('#calendar')[0], {
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay'
+        },
+        initialView: 'dayGridMonth',
+        events: [
+          {
+            title: 'ZXL Coorperations',
+            start: '2024-11-28',
+            description: 'zLX coorperations - Due Payment',
+            color: '#f44336', // Red color for events
+          }
+        ],
+        height: 'auto',
+        weekends: true,
+        aspectRatio: 1.5,
+      });
+
+      calendar.render();
+    });
+  </script>
+</body>
+</html>

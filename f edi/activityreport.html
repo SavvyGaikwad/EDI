@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM Dashboard</title>
+    <link rel="stylesheet" href="css/all.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* CSS to display project statuses horizontally in a single row */
+      .boxes {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+      }
+
+      .box {
+        display: flex;
+        flex-direction: column;
+        min-width: 150px;
+        background: #f2f2f2;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .box p {
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .icon-value {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      .icon {
+        font-size: 18px;
+        color: #333;
+      }
+
+      .projects {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .project {
+        background: #e6e6e6;
+        padding: 8px;
+        margin-bottom: 5px;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+
+      .bg-pink {
+        background-color: #ff7f7f;
+      }
+
+      .bg-purple {
+        background-color: #a593e0;
+      }
+
+      .bg-green {
+        background-color: #76e2a3;
+      }
+
+      .bg-cyan {
+        background-color: #00bcd4;
+      }
+
+      .bg-blue {
+        background-color: #2196f3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav class="carrotsuite-nav">
+          <div class="logo">
+            <a href="index.html" class="active nav-item">
+              <img src="images/Carrotsuite.png" alt="Carrotsuite" />
+            </a>
+          </div>
+          <div class="icons right">
+            <a href="#" class="nav-item">
+              <div class="badge"><span>5</span></div>
+              <i class="far fa-bell"></i>
+            </a>
+            <a href="#" class="nav-item"><i class="far fa-envelope"></i></a>
+          </div>
+          <div class="user" id="user">
+            <a href="#" class="user-link">name</a>
+          </div>
+        </nav>
+      </header>
+
+      <main class="main">
+        <section class="sidebar">
+          <h3>CRM</h3>
+          <ul class="menu">
+            <!-- Home Page Link -->
+            <li><a href="home.html" title="Home"><i class="fas fa-home"></i><span>Home</span></a></li>
+      
+            <!-- Dashboard Page Link (highlighted if you're on Dashboard) -->
+            <li><a href="dash.html" title="Dashboard" ><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+      
+            <!-- Clients Page Link (highlighted if you're on Clients) -->
+            <li><a href="index.html" title="Clients" class=""><i class="fas fa-sitemap"></i><span>Clients</span></a></li>
+      
+            <li class="menu-heading"><h3>Log activity</h3></li>
+            <li><a href="activityreport.html" title="Activity report" class="active"><i class="fas fa-chart-bar"></i><span>Activity report</span></a></li>
+            <li><a href="cal.html" title="Calender"><i class="fas fa-chart-line"></i><span>Calender</span></a></li>
+            <li><a href="salesreport.html" title="Sales"><i class="fas fa-chart-line"></i><span>Sales</span></a></li>
+
+
+          </ul>
+        </section>
+    
+        <article class="board">
+  <p></p>
+  <section class="boxes">
+    <!-- Insert the image here -->
+    <img src="analysis.png" alt="Analysis Image" style="float: right; max-width: 100%; height: auto; margin-left: 20px; margin-bottom: 20px;" />
+  </section>
+</article>
+
+          
+      </main>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
